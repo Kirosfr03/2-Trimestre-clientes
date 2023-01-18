@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Borrar</button>
+    <a href="index.html">Hola</a>
+    
+    <script>
+        nombre= localStorage.getItem("Nombre");
+        clave = localStorage.getItem("Clave");
+        
+        let parra = document.createElement("div");
+        let tex = document.createElement("p")
+        let datosNombre = document.createTextNode("Nombre: " + nombre + " ")
+        let datosClave = document.createTextNode("Clave: " + clave)
+        tex.appendChild(datosNombre);
+        tex.appendChild(datosClave);
+        parra.appendChild(tex);
+        document.body.appendChild(parra)
+
+        let boton = document.querySelector("button")
+
+        boton.onclick = () =>{
+            localStorage.removeItem("Nombre");
+            localStorage.removeItem("Clave");
+            console.log("fghjk");
+        }
+    </script>
+</body>
+</html>

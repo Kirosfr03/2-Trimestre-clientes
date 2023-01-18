@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="checkbox" name="Jugar" id="">
+        <label for="">Jogar</label>
+        <input type="checkbox" name="Dormir" id="">
+        <label for="">Dormir</label>
+        <input type="checkbox" name="Leer" id="">
+        <label for="">Leer</label>
+
+        <textarea name="aficiones"></textarea>
+    </form>
+
+    <script>
+        let datos = document.querySelectorAll("input[type = checkbox]");
+        let area = document.querySelector("textarea");
+        for (let i = 0; i < datos.length; i++) {
+            datos[i].onclick = () => {
+                anadir();
+            }
+            
+        }
+
+        function anadir() {
+            area.textContent ="";
+            datos.forEach(element => {
+                if (element.checked) {
+                    area.textContent+=element.name+" ";   
+                }
+            });
+        }
+    </script>
+</body>
+</html>

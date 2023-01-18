@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text">
+        <input type="text">
+
+        <input type="button" value="Comprobar">
+    </form>
+
+    <script>
+        let boton = document.querySelector("input[type = button]");
+        let datos = document.querySelectorAll("input[type = text]");
+
+        boton.onclick = () => {
+            console.log(datos[0].value);
+            console.log(datos[1].value);
+            if (datos[0].value != "" && datos[1].value != "") {
+                if (datos[0].value.length == datos[1].value.length) {
+                    if (esAnagrama(datos[0].value, datos[1].value)) {
+                        alert("Las dos palabras son anagramas");
+                    } else {
+                        alert("Las dos palabras no son anagramas");
+                    }
+                } else {
+                    alert("Las dos palabras tiene diferente tamaño");
+                }
+            } else {
+                alert("No has relenado los dos campos");
+            }
+        }
+
+        function esAnagrama(primera, segunda) {
+            primera.toLowerCase(); segunda.toLowerCase();
+            primera.split("").sort().join(); segunda.split("").sort().join();
+            
+            if(primera === segunda){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="primero" id="">
+        <input type="text" name="segundo" id="">
+        <input type="button" value="copiar">
+    </form>
+
+    <script>
+        let boton = document.querySelector("input[type = button]");
+        let datos = document.querySelectorAll("input[type = text]");
+
+        boton.onclick = () =>{
+            datos[1].value = datos[0].value;
+        }
+    </script>
+</body>
+</html>

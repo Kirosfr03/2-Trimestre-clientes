@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+
+        section{
+            height: 50px;
+            background-color: antiquewhite;
+        }
+
+        p{
+            width: 100%;
+            height: 20px;
+            background-color: aliceblue;
+        }
+
+        a{
+
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p><a href="https://lectortmo.com/viewer/5af1bb5f3193b/cascade">asdfghjklñ</a></p>
+    </section>
+
+    <script>
+        const body = document.body;
+        const section = document.querySelector("section");
+        const parra = document.querySelector("p")
+        const enlace = document.links[0];
+
+        section.addEventListener("click", 
+            function () {
+                section.style.backgroundColor = "green";
+            }
+        )
+
+        parra.addEventListener("click", 
+            function () {
+                parra.style.width = "500px";
+            }
+        )
+
+        enlace.addEventListener("click", 
+            function (e) {
+                if(confirm("Quieres ir a la pagina")== false){
+                    e.preventDefault()
+                }
+            }
+
+            
+        )
+    </script>
+</body>
+</html>

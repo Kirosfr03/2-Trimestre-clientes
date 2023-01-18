@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="checkbox" name="España" id="">
+        <label for="">España</label>
+        <input type="checkbox" name="Portugal" id="">
+        <label for="">Portugal</label>
+        <input type="checkbox" name="Francia" id="">
+        <label for="">Francia</label>
+        <input type="checkbox" name="Italia" id="">
+        <label for="">Italia</label>
+
+        <select>
+            
+        </select>
+    </form>
+
+    <script>
+        let datos = document.querySelectorAll("input[type = checkbox]");
+        let opciones = document.querySelector("select");
+        for (let i = 0; i < datos.length; i++) {
+            datos[i].onchange = () => {
+                anadir();
+                
+            }
+            
+        }
+
+        function anadir() {
+            var option = document.createElement('option');
+
+            while(opciones.length > 0){
+                opciones.remove(0);
+            }
+            for (let i = 0; i < datos.length; i++) {
+                if (datos[i].checked) {
+                    let valor = datos[i].name;
+                    option.name = valor;
+                    option.text = valor;
+                    opciones.add(option); 
+                }
+                
+            }
+        }
+
+        function limpiar() {
+            
+                    opciones.remove(element);   
+        } 
+          
+    </script>
+</body>
+</html>

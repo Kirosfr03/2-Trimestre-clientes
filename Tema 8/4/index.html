@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="number">
+        <input type="number">
+        <select name="" id="">
+            <option value="euros">€ - $</option>
+            <option value="dolares">$ - €</option>
+        </select>
+
+        <input type="button" value="Convertir">
+    </form>
+
+    <script>
+        const multiplo = 0.83;
+        let forma = document.querySelector("select");
+        let boton = document.querySelector("input[type = button]");
+        let datos = document.querySelectorAll("input[type = number]")
+
+        boton.onclick = () => {
+            if (forma.value == "euros") {
+                let dineros =  datos[0].value*multiplo;
+                datos[1].value = dineros.toFixed(2);   
+            } else {
+                let dineros =  datos[0].value/multiplo;
+                datos[1].value = dineros.toFixed(2);  
+            }
+        }
+    </script>
+</body>
+</html>

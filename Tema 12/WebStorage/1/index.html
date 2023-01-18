@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="Nombre" id="">
+        <input type="text" name="Clave" id="">
+        <input type="button" value="Enviar">
+        <a href="otra.html">asxdcvfbgn</a>
+    </form>
+
+    <script>
+        let boton = document.querySelector("input[type = button]");
+        let formulario = document.querySelector("form")
+
+        boton.onclick = () =>{
+            guardar(formulario[0].name, formulario[0].value)
+            guardar(formulario[1].name, formulario[1].value)
+        }
+
+        function guardar(clave, valor){
+            localStorage.setItem(clave, valor);
+        }
+    </script>
+</body>
+</html>
